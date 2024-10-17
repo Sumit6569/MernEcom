@@ -1,0 +1,122 @@
+/* Slider container and item styling */
+.slider-container {
+  position: relative;
+  width: 100%;
+  background-color: red;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+@media (min-width: 640px) {
+  .slider-container {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .slider-container {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider-container {
+    height: 600px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .slider-container {
+    height: 700px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .slider-container {
+    height: 800px;
+  }
+}
+
+.slider-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+}
+
+.slider-item {
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  opacity: 0;
+  transform: scale(0.95);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider-item.active {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+}
+
+.slider-image {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+/* Slider Controls */
+.slider-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.slider-control:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slider-control.prev {
+  left: 10px;
+}
+
+.slider-control.next {
+  right: 10px;
+}
+
+.control-icon {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Indicator Dots */
+.slider-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.indicator-dot.active-dot {
+  background-color: white;
+  transform: scale(1.2);
+}

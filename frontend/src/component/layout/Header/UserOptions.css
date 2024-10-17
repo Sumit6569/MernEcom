@@ -1,0 +1,7 @@
+.profileImage {
+  background-color: #f0f0f0; /* Change this to your desired background color */
+  border-radius: 50%; /* Optional: to make the image circular */
+  width: 100px; /* Set a specific width or use auto */
+  height: 100px; /* Set a specific height or use auto */
+  object-fit: cover; /* To ensure the image covers the container */
+}
