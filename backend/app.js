@@ -8,10 +8,8 @@ const errorMiddleware = require("./middleware/error");
 const path = require("path");
 
 app.use(cors({
-  origin: 'https://mernecom-1-frontend.onrender.com
-
-', // Replace with your frontend URL
-  credentials: true
+  origin: '*', // Allow all origins (use only in development)
+  credentials: true,
 }));
 
 app.use(express.json());
