@@ -99,7 +99,7 @@ const PayPal = ({
     let token = localStorage.getItem("token");
     console.log("Token:", token);
 
-    const apiUrl = import.meta.env.VITE_API_URL;
+    const apiUrl ="https://mernecom-1-frontend.onrender.com/api/v1/order/new";
 
     console.log("API URL:", apiUrl);
 
