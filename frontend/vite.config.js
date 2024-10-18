@@ -8,7 +8,13 @@ export default defineConfig({
       "/api/v1": {
         target: "https://mernecom-pgkp.onrender.com",
         changeOrigin: true,
+        secure: false, // Optional: Set to false if your backend uses self-signed certificates
       },
+    },
+  },
+  build: {
+    rollupOptions: {
+      external: [], // Add any external modules here if needed
     },
   },
 });
