@@ -286,7 +286,14 @@ export const updateProfile = (userData) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_PROFILE_REQUEST });
 
-    const config = { headers: { "Content-Type": "application/json" } };
+    const token = localStorage.getItem("token"); // Get the token from localStorage
+    console.log("User Action Token"+token);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+      },
+    };
 
     const { data } = await axios.put(`/me/update`, userData, config);
 
@@ -304,7 +311,15 @@ export const updatePassword = (passwords) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_PASSWORD_REQUEST });
 
-    const config = { headers: { "Content-Type": "application/json" } };
+    const token = localStorage.getItem("token"); // Get the token from localStorage
+   
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+      },
+    };
+
 
     const { data } = await axios.put(`/password/update`, passwords, config);
 
