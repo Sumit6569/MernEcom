@@ -262,8 +262,15 @@ export const register = (userData) => async (dispatch) => {
 export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_REQUEST });
-
-    const { data } = await axios.get(`/me`);
+ const token = localStorage.getItem("token"); // Get the token from localStorage
+   
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+      },
+    };
+    const { data } = await axios.get(`/me`,config);
     dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
   } catch (error) {
     dispatch({ type: LOAD_USER_FAIL, payload: error.response?.data.message });
