@@ -7,10 +7,10 @@ const cors = require("cors");
 const errorMiddleware = require("./middleware/error");
 const path = require("path");
 
-app.use(cors({
-  origin: '*', // Allow all origins (use only in development)
-  credentials: true,
-}));
+const cors = require('cors');
+
+app.use(cors()); // Enable CORS for all routes
+
 
 app.use(express.json());
 app.use(cookieParser());
