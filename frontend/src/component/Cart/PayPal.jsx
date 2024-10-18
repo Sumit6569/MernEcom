@@ -5,7 +5,6 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Ensure this is imported
 import.meta.env;
 import axios from "axios";
-import { toString } from "validator";
 
 const PayPal = ({
   productPrice,
