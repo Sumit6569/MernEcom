@@ -7,7 +7,7 @@ const cors = require("cors");
 const errorMiddleware = require("./middleware/error");
 const path = require("path");
 
-const cors = require('cors');
+
 
 app.use(cors()); // Enable CORS for all routes
 
