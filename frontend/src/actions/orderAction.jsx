@@ -198,7 +198,15 @@ export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
 
-    const { data } = await axios.get("/orders/me");
+    const token = localStorage.getItem("token"); // Get the token from localStorage
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`, // Add the token to Authorization header
+      },
+    };
+
+    const { data } = await axios.get(`/orders/me`, config); // Fetch orders with config
+
     console.log("order data" + data);
 
     dispatch({ type: MY_ORDERS_SUCCESS, payload: data.orders });
