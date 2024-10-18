@@ -7,7 +7,12 @@ const cors = require("cors");
 const errorMiddleware = require("./middleware/error");
 const path = require("path");
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://mernecom-1-frontend.onrender.com
+
+', // Replace with your frontend URL
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(cookieParser());
