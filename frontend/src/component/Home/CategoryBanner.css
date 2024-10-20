@@ -1,0 +1,126 @@
+/* General styles for the banner */
+.bannerincat {
+  padding: 60px 0;
+  
+  gap: 20px;
+}
+
+.containerinbanner {
+  max-width: 710px;
+ 
+  height: 100px;
+  margin-right: 570px;
+  margin-bottom: 120px;
+  
+  
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 80px;
+  margin-right: 30px; /* Avoid extra margin */
+  
+  width: 210%; /* Ensure row spans the full width */
+}
+
+/* Banner item styles */
+.banner_item {
+  position: relative;
+  height: 300px;
+  width: 100%; /* Adjusted to fit within column */
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner_item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.banner_item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.banner_item:hover::before {
+  opacity: 1;
+}
+
+.banner_category {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.banner_item:hover .banner_category {
+  opacity: 1;
+}
+
+/* Media Queries for Responsiveness */
+/* Media Queries for small screens (max-width: 576px) */
+@media (max-width: 576px) {
+  .banner_item {
+    height: 150px; /* Adjust the height */
+    width: 100%; /* Ensure full width on small screens */
+    margin-bottom: 20px; /* Reduce space between banners */
+  }
+
+  .banner_category {
+    font-size: 1.2rem; /* Smaller text for smaller screens */
+  }
+
+  .containerinbanner {
+    margin: 0 auto; /* Center content */
+    margin-bottom: 60px; /* Adjust space before the next section */
+  }
+}
+
+/* Media Queries for extra small screens (max-width: 376px) */
+@media (max-width: 376px) {
+  .banner_item {
+    height: 120px; /* Reduce height for smaller screens */
+    width: 100%; /* Ensure banners take up full width */
+    margin-bottom: 10px; /* Minimize space between banners */
+  }
+
+  .banner_category {
+    font-size: 1rem; /* Adjust text size for smaller screens */
+  }
+
+  .row {
+    row-gap: 20px; /* Reduce gap between rows further */
+    justify-content: space-between; /* Ensure space between banners */
+  }
+
+  .containerinbanner {
+    margin-bottom: 260px; /* Adjust space to prevent overlap */
+    background-color: black;
+  }
+
+  /* Prevent horizontal scrolling */
+  body, html {
+    overflow-x: hidden; /* Disable horizontal scrolling */
+  }
+}

@@ -9,3 +9,76 @@
   height: 56px;
   border-radius: 100%;
 }
+/* .burger-icon {
+  position: absolute;
+  top: 25px;
+  left: 29px;
+  cursor: pointer;
+ 
+} */
+
+.menuBurger {
+  height: 60px;
+  width: 60px;
+}
+
+/* Extra Small Screens (portrait phones) */
+@media (max-width: 375px) {
+  .menuBurger {
+    height: 40px;
+    width: 40px;
+    gap: 5px;
+  }
+  .menuBurgerItem{
+    height: 40px;
+    width: 34px;
+  }
+}
+
+/* Small Screens (landscape phones) */
+@media (min-width: 376px) and (max-width: 600px) {
+ .menuBurger {
+    height: 40px;
+    width: 40px;
+    gap: 5px;
+  }
+  .menuBurgerItem{
+    height: 40px;
+    width: 34px;
+  }
+}
+
+/* Medium Screens (tablets) */
+@media (min-width: 601px) and (max-width: 768px) {
+ .menuBurger {
+    height: 40px;
+    width: 40px;
+    gap: 5px;
+  }
+  .menuBurgerItem{
+    height: 40px;
+    width: 34px;
+  }
+}
+
+/* Large Screens (desktops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+ .menuBurger {
+    height: 40px;
+    width: 40px;
+    gap: 5px;
+  }
+  .menuBurgerItem{
+    height: 40px;
+    width: 34px;
+  }
+}
+
+/* Extra Large Screens (larger desktops) */
+@media (min-width: 1025px) {
+  .menuBurger {
+    height: 60px;
+    width: 60px;
+  }
+}
+

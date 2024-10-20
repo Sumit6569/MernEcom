@@ -1,0 +1,87 @@
+/* Import Poppins font */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900");
+
+/* General styling */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Flexbox layout for aligning image and text */
+.carousel-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 600px; /* Adjust height as necessary */
+ background-color: #F8F8F8;
+  overflow: hidden;
+  padding: 0 5%;
+  margin-top: 100px;
+}
+
+.carousel-image {
+  
+  max-width: 50%; /* Adjusted image size */
+  object-fit: cover; /* Ensures full image coverage */
+  position: absolute;
+  margin-left: 690px;
+ 
+  height: 600px;
+ 
+}
+
+.carousel-text {
+  padding-left: 50px;
+  max-width: 45%;
+  text-align: left;
+}
+
+.carousel-text h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.carousel-text h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.shop-now {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #015994;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.shop-now:hover {
+  background-color: #015994;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .carousel-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .carousel-text {
+    padding-left: 0;
+    max-width: 100%;
+  }
+
+  .carousel-image {
+    max-width: 100%;
+    max-height: 300px;
+    height: auto;
+  }
+}

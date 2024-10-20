@@ -186,8 +186,6 @@
 //   }
 // };
 
-
-
 import {
   LOGIN_REQUEST,
   LOGIN_FAIL,
@@ -262,15 +260,15 @@ export const register = (userData) => async (dispatch) => {
 export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_REQUEST });
- const token = localStorage.getItem("token"); // Get the token from localStorage
-   
+    const token = localStorage.getItem("token"); // Get the token from localStorage
+
     const config = {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`, // Include the token in the Authorization header
       },
     };
-    const { data } = await axios.get(`/me`,config);
+    const { data } = await axios.get(`/me`, config);
     dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
   } catch (error) {
     dispatch({ type: LOAD_USER_FAIL, payload: error.response?.data.message });
@@ -294,7 +292,7 @@ export const updateProfile = (userData) => async (dispatch) => {
     dispatch({ type: UPDATE_PROFILE_REQUEST });
 
     const token = localStorage.getItem("token"); // Get the token from localStorage
-    console.log("User Action Token"+token);
+    console.log("User Action Token" + token);
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -319,14 +317,13 @@ export const updatePassword = (passwords) => async (dispatch) => {
     dispatch({ type: UPDATE_PASSWORD_REQUEST });
 
     const token = localStorage.getItem("token"); // Get the token from localStorage
-   
+
     const config = {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`, // Include the token in the Authorization header
       },
     };
-
 
     const { data } = await axios.put(`/password/update`, passwords, config);
 
@@ -361,9 +358,15 @@ export const forgotPassword = (email) => async (dispatch) => {
 export const getAllUsers = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_USERS_REQUEST });
+    const token = localStorage.getItem("token"); // Get token from local storage
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`, // Include the token
+      },
+    };
 
-    const { data } = await axios.get(`/admin/users`);
-
+    const { data } = await axios.get(`/admin/users`, config); // Pass config with headers
+   
     dispatch({ type: ALL_USERS_SUCCESS, payload: data.users });
   } catch (error) {
     dispatch({ type: ALL_USERS_FAIL, payload: error.response?.data.message });
@@ -374,8 +377,14 @@ export const getAllUsers = () => async (dispatch) => {
 export const deleteUser = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_USER_REQUEST });
+const token = localStorage.getItem("token"); // Get the token from local storage
+const config = {
+  headers: {
+    Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+  },
+};
 
-    const { data } = await axios.delete(`/admin/user/${id}`);
+const { data } = await axios.delete(`/admin/user/${id}`, config);
 
     dispatch({ type: DELETE_USER_SUCCESS, payload: data });
   } catch (error) {
@@ -390,31 +399,6 @@ export const deleteUser = (id) => async (dispatch) => {
 export const clearErrors = () => async (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // export const clearErrors = () => async (dispatch) => {
 //   dispatch({ type: CLEAR_ERRORS });

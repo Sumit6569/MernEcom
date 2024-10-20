@@ -125,7 +125,7 @@
 
 .submitReview {
   border: none;
-  background-color: tomato;
+  background-color: #015994;
   font: 500 0.7vmax "Roboto";
   border-radius: 20px;
   padding: 0.6vmax 2vmax;
@@ -136,7 +136,7 @@
   outline: none;
 }
 .submitReview:hover {
-  background-color: rgb(197, 68, 45);
+  background-color: #015994;
   transform: scale(1.1);
 }
 

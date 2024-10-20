@@ -12,10 +12,12 @@ import { Link } from "react-router-dom";
 import SliderComponent from "../Slider/Slider"; // Renamed for clarity
 import Search from "../Product/Search.jsx";
 import Footer from "../Footer/Footer.jsx";
+import Homebanner from "./Homebanner.jsx";
+import CategoryBanner from "./CategoryBanner.jsx";
 function Home() {
   const dispatch = useDispatch();
   const { loading, error, products } = useSelector((state) => state.products);
- const { isAuthenticated, user } = useSelector((state) => state.user);
+  const { isAuthenticated, user } = useSelector((state) => state.user);
   // Fetch all products on component mount
   useEffect(() => {
     dispatch(getProduct({})); // Pass an empty object to fetch all products
@@ -27,24 +29,22 @@ function Home() {
         <Loader />
       ) : (
         <>
-          <MetaData title="ECOMMERCE" />
-
-          {/* Login/Signup Button */}
-
-          {/* Banner Section */}
+          <MetaData title="SumitTrends" />
+          <Homebanner />
           <div className="banner">
-            {/* New Button Above Search Bar */}
-
-            {/* Slider Component */}
-            <SliderComponent />
-
-            <div className="top-button-container">
-              <Link to="/login">
-                <button className="login-signup-button">Login/Signup</button>
-              </Link>
+            <div className="banner-text">
+              {isAuthenticated ? (
+                <></>
+              ) : (
+                <Link to="/login">
+                  <button className="login-signup-button">Login/Signup</button>
+                </Link>
+              )}
             </div>
+            <div className="top-button-container"></div>
             {/* Search Box */}
             <Search />
+            <CategoryBanner />
           </div>
 
           {/* Featured Products */}

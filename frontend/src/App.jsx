@@ -54,7 +54,12 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <>
+        
+          <Header />
+          
+      </>
+
       {isAuthenticated && <UserOptions user={user} />}
 
       <Routes>

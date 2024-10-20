@@ -95,18 +95,18 @@ const PayPal = ({
       shippingPrice: calculatedShippingPrice,
       totalPrice: calculatedTotalPrice,
     };
-   
-    let token = localStorage.getItem("token");
-    console.log("Token:", token);
 
-    const apiUrl ="https://mernecom-1-frontend.onrender.com/api/v1/order/new";
+    let token = localStorage.getItem("token");
+    console.log("Token: in paypal", token);
+
+    const apiUrl = "https://mernecom-pgkp.onrender.com/api/v1/order/new";
 
     console.log("API URL:", apiUrl);
 
     axios
       .post(apiUrl, orderData, {
         headers: {
-          Authorization: `Bearer ${token}`, 
+          Authorization: `Bearer ${token}`,
         },
       })
 

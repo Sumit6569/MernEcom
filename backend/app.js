@@ -7,6 +7,8 @@ const cors = require("cors");
 const errorMiddleware = require("./middleware/error");
 const path = require("path");
 
+
+
 const allowedOrigins = [
   "https://mernecom-1-frontend.onrender.com",
   "http://localhost:5173",
@@ -18,8 +20,8 @@ app.use(
     methods: "GET,POST,PUT,DELETE",
     credentials: true, // Enable cookies for cross-origin requests
   })
-);
-// Enable CORS for all routes
+); // Enable CORS for all routes
+
 
 app.use(express.json());
 app.use(cookieParser());
@@ -36,6 +38,11 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 const product = require("./routes/productRoute");
 const user = require("./routes/userRoute");
 const order = require("./routes/orderRoute");
+
+
+
+
+
 
 app.use("/api/v1", product);
 app.use("/api/v1", user);

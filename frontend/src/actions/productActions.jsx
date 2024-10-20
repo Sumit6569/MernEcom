@@ -84,7 +84,6 @@
 //   }
 // };
 
-
 // export const createProduct = (productData) => async (dispatch) => {
 //   try {
 //     dispatch({ type: NEW_PRODUCT_REQUEST });
@@ -110,10 +109,6 @@
 //     });
 //   }
 // };
-
-
-
-
 
 // export const getProductDetails = (id) => async (dispatch) => {
 //   try {
@@ -179,9 +174,6 @@
 // export const clearErrors = () => async (dispatch) => {
 //   dispatch({ type: CLEAR_ERRORS });
 // };
-
-
-
 
 // src/actions/ProductAction.js
 
@@ -254,8 +246,14 @@ export const getProduct =
 export const getAdminProduct = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCT_REQUEST });
+    const token = localStorage.getItem("token"); // Get the token from local storage
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+      },
+    };
 
-    const { data } = await axios.get(`/admin/products`);
+    const { data } = await axios.get(`/admin/products`, config);
 
     dispatch({
       type: ADMIN_PRODUCT_SUCCESS,
@@ -274,13 +272,19 @@ export const createProduct = (productData) => async (dispatch) => {
   try {
     dispatch({ type: NEW_PRODUCT_REQUEST });
 
+    //const token = localStorage.getItem("token"); // Get the token from local storage
     const config = {
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`, // Include your token
       },
     };
 
-    const { data } = await axios.post(`/admin/product/new`, productData, config);
+    const { data } = await axios.post(
+      `/admin/product/new`,
+      productData,
+      config
+    );
 
     dispatch({
       type: NEW_PRODUCT_SUCCESS,
@@ -323,9 +327,9 @@ export const newReview = (reviewData) => async (dispatch) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`, // Include your token
       },
     };
-
     const { data } = await axios.put(`/review`, reviewData, config);
 
     dispatch({
@@ -344,8 +348,13 @@ export const newReview = (reviewData) => async (dispatch) => {
 export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
-
-    const { data } = await axios.delete(`/admin/product/${id}`);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`, // Include your token
+      },
+    };
+    const { data } = await axios.delete(`/admin/product/${id}`, config);
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
@@ -363,17 +372,3 @@ export const deleteProduct = (id) => async (dispatch) => {
 export const clearErrors = () => async (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
