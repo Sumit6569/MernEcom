@@ -9,7 +9,12 @@ const path = require("path");
 
 
 
-app.use(cors()); // Enable CORS for all routes
+app.use(
+  cors({
+    origin: "https://mernecom-1-frontend.onrender.com", // Replace with your actual frontend URL
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+  })
+); // Enable CORS for all routes
 
 
 app.use(express.json());
