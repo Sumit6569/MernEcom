@@ -1,21 +1,12 @@
-
-
-
-
 .banner {
- 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
- 
- 
-
 }
 
 .banner > p {
@@ -42,7 +33,6 @@
   content: "";
   width: 100vw;
   height: 30vmin;
-
   position: absolute;
   top: 0%;
   left: 0;
@@ -58,7 +48,7 @@
   width: 20vmax;
   padding: 1vmax;
   margin: 5vmax auto;
-  color: rgb(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .container {
@@ -103,11 +93,13 @@
   margin: 1vmax 0.5vmax;
   margin-bottom: 0;
 }
+
 .top-button-container {
   display: flex;
   justify-content: flex-end; /* Align to the right */
   padding: 10px 20px;
 }
+
 .login-signup-button {
   padding: 10px 20px;
   background-color: #014694;
@@ -123,16 +115,6 @@
   background-color: #3761d6;
 }
 
-
-
-
-
-
-
-
-
-
-
 .productCard > span {
   margin: 0.5vmax;
   color: tomato;
@@ -142,10 +124,10 @@
 
 .productCard:hover {
   box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
-
   transform: translateY(-1vmax);
 }
 
+/* Media Queries */
 @media screen and (max-width: 600px) {
   .productCard > p {
     font-size: 1.7vmax;
@@ -163,5 +145,30 @@
   .productCard > div > span {
     margin: 0 0.5vmax;
     font: 300 1vmax "Roboto";
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .productCard {
+    width: 30vmax; /* Adjust width for larger screens */
+  }
+
+  .homeHeading {
+    width: 40vmax; /* Adjust heading width */
+    font-size: 1.6vmax; /* Increase font size slightly */
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .productCard {
+    width: 22vmax; /* Slightly smaller width */
+  }
+
+  .container {
+    width: 90vw; /* Wider container */
+  }
+
+  .banner > p {
+    font-size: 1.6vmax; /* Increase font size for banners */
   }
 }
