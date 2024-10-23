@@ -12,7 +12,9 @@
 .banner > p {
   font: 300 1.4vmax "Lucida Sans";
 }
-
+.login-signup-button{
+  margin-left: 695px;
+}
 .banner > a > button {
   margin-bottom: 5vmax;
   cursor: pointer;
@@ -23,6 +25,7 @@
   transition: all 0.5s;
   width: 9vmax;
   font: 500 1vmax "Roboto";
+  
 }
 .banner > a > button:hover {
   background-color: rgba(255, 255, 255, 0);
@@ -128,47 +131,96 @@
 }
 
 /* Media Queries */
-@media screen and (max-width: 600px) {
-  .productCard > p {
-    font-size: 1.7vmax;
+/* Adjust button size and positioning for smaller screens */
+@media screen and (max-width: 300px) {
+  .banner {
+    padding: 2vmax;
   }
 
-  .productCard > div {
-    margin: 0vmax;
-    display: block;
+  .login-signup-button {
+    font-size: 2.8vmax;  /* Adjust the font size to be large enough on very small screens */
+    padding: 1.5vmax;    /* Larger padding for touch area */
+    width: 40%; 
+    margin-left: 60px;         /* Make the button almost full width on very small screens */
   }
 
-  .productCard > span {
+  .top-button-container {
+    justify-content: center;  /* Center the button */
+    padding: 1vmax;
+  }
+}
+
+/* For screens from 300px to 400px */
+@media screen and (min-width: 300px) and (max-width: 400px) {
+  .banner {
+    padding: 3vmax;
+  }
+
+  .login-signup-button {
+    font-size: 2.8vmax;  /* Adjust the font size to be large enough on very small screens */
+    padding: 1.5vmax;    /* Larger padding for touch area */
+    width: 40%; 
+    margin-left: 95px;         /* Make the button almost full width on very small screens */
+  }
+
+
+  .top-button-container {
+    justify-content: center;
+    padding: 1vmax;
+  }
+}
+
+/* For screens from 400px to 600px */
+@media screen and (min-width: 400px) and (max-width: 600px) {
+  .banner {
+    padding: 3vmax;
+  }
+
+  .login-signup-button {
+    font-size: 2.8vmax;  /* Adjust the font size to be large enough on very small screens */
+    padding: 1.5vmax;    /* Larger padding for touch area */
+    width: 40%; 
+    margin-left: 100px;         /* Make the button almost full width on very small screens */
+  }
+
+  .top-button-container {
+    justify-content: center;
+    padding: 1vmax;
+  }
+}
+
+/* For larger screens (600px to 800px) */
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .banner {
+    padding: 4vmax;
+  }
+
+  .login-signup-button {
+    font-size: 1.8vmax;
+    padding: 1.2vmax;
+    width: 60%;
+  }
+
+  .top-button-container {
+    justify-content: center;
+    padding: 1vmax;
+  }
+}
+
+/* For screens from 800px to 1200px */
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .banner {
+    padding: 4vmax;
+  }
+
+  .login-signup-button {
     font-size: 1.5vmax;
+    padding: 1vmax;
+    width: 50%;
   }
 
-  .productCard > div > span {
-    margin: 0 0.5vmax;
-    font: 300 1vmax "Roboto";
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .productCard {
-    width: 30vmax; /* Adjust width for larger screens */
-  }
-
-  .homeHeading {
-    width: 40vmax; /* Adjust heading width */
-    font-size: 1.6vmax; /* Increase font size slightly */
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .productCard {
-    width: 22vmax; /* Slightly smaller width */
-  }
-
-  .container {
-    width: 90vw; /* Wider container */
-  }
-
-  .banner > p {
-    font-size: 1.6vmax; /* Increase font size for banners */
+  .top-button-container {
+    justify-content: center;
+    padding: 1vmax;
   }
 }

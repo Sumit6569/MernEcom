@@ -31,16 +31,15 @@ function Home() {
         <>
           <MetaData title="SumitTrends" />
           <Homebanner />
+          {isAuthenticated ? (
+            <></>
+          ) : (
+            <Link to="/login">
+              <button className="login-signup-button">Login</button>
+            </Link>
+          )}
           <div className="banner">
-            <div className="banner-text">
-              {isAuthenticated ? (
-                <></>
-              ) : (
-                <Link to="/login">
-                  <button className="login-signup-button">Login/Signup</button>
-                </Link>
-              )}
-            </div>
+            <div className="banner-text"></div>
             <div className="top-button-container"></div>
             {/* Search Box */}
             <Search />
@@ -63,3 +62,4 @@ function Home() {
 }
 
 export default Home;
+
